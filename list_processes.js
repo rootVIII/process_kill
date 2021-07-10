@@ -24,7 +24,6 @@ class PSCmd {
     run() {
         for (let process of this.filterStdout()) {
             let currentPS = process[process.length - 1];
-            // console.log(currentPS);
             if (!(currentPS in this.processes)) {
                 this.processes[currentPS] = [process.slice(0, 3)];
             } else {
