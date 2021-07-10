@@ -13,19 +13,23 @@ class PSCmd {
         }
     }
 
-    * run() {
+    * filterStdout() {
         for (const trimmedLine of this.execPS()) {
             const ps = trimmedLine.split(/[ ]+/);
             yield ps.slice(0, 3).concat(ps.slice(3, ps.length).join(' '));
+        }
+    }
+
+    run() {
+        for (let process of this.filterStdout()) {
+            console.log(process);
         }
     }
 }
 
 function main() {
     let ps = new PSCmd();
-    for (let process of ps.run()) {
-        console.log(process);
-    }
+    ps.run();
 }
 
 main();
