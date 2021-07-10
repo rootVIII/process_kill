@@ -33,18 +33,21 @@ class PSCmd {
     }
 
     getProcessDetails() {
-        return this.processes;
+        return JSON.stringify(
+            Object.keys(this.processes).sort().reduce(
+                (obj, key) => {
+                    obj[key] = this.processes[key];
+                    return obj;
+                }, {},
+            ),
+        );
     }
 }
 
 function main() {
     let ps = new PSCmd();
     ps.run();
-    Object.entries(ps.getProcessDetails()).forEach(([key, val]) => {
-        console.log(key);
-        console.log(val);
-        console.log('\n');
-    });
+    console.log(ps.getProcessDetails());
 }
 
 main();
