@@ -44,10 +44,12 @@ class PSCmd {
     }
 }
 
-function main() {
-    let ps = new PSCmd();
-    ps.run();
-    console.log(ps.getProcessDetails());
-}
+// function main() {
+//     let ps = new PSCmd();
+//     ps.run();
+//     console.log(ps.getProcessDetails());
+// }
 
-main();
+// main();
+
+module.exports = PSCmd;
