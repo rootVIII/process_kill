@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel=stylesheet type=text/css href="./bootstrap.css">
+    <script src="./ui.js" type="text/javascript" defer> </script>
 </head>
 
 <body class="bg-light">
@@ -31,7 +32,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
+                        <tr id="draggable" draggable="true" ondragstart="onRowDragStart(event)">
                             <th scope="row">firefox</th>
                             <td>12673</td>
                             <td>.20</td>
@@ -217,25 +218,17 @@
             </div>
 
             <div class="col-3" id="rightCol">
-                <div class="bg-info border border-dark rounded text-light">
-                    &nbsp;<small id="p1">p1</small><br>
-                    &nbsp;<small id="p2">p2</small><br>
-                    &nbsp;<small id="p3">p3</small><br>
-                    &nbsp;<small id="p4">p4</small><br>
-                    &nbsp;<small id="p5">p5</small><br>
-                    &nbsp;<small id="p6">p6</small><br>
-                    &nbsp;<small id="p7">p7</small><br>
-                    &nbsp;<small id="p8">p8</small><br>
-                    &nbsp;<small id="p9">p9</small><br>
-                    &nbsp;<small id="p10">p10</small><br>
-                    &nbsp;<small id="p11">p11</small><br>
-                    &nbsp;<small id="p12">p12</small><br>
-                    &nbsp;<small id="p13">p13</small><br>
-                    &nbsp;<small id="p14">p14</small><br>
+                <div class="bg-info border border-dark rounded text-light" id="dropZone" ondragover="onRowDragover(event)" ondrop="onRowDrop(event)">
                     <br>
-                    <div class="text-center">
-                        <button type="button" id='killButton' class="btn btn-dark btn-sm text-light btn-outline-danger mb-2">Kill Processes 💀</button>
-                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    
+                </div>
+                <div class="text-center mt-2">
+                    <button type="button" id='killButton' class="btn btn-dark btn-sm text-light btn-outline-danger mb-2">Kill Processes 💀</button>
                 </div>
             </div>
 
