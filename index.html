@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel=stylesheet type=text/css href="./bootstrap.css">
     <link rel="icon" href="./favicon.ico">
-    <script src="./list_processes.js" type="text/javascript" defer> </script>
     <style>
         #deviceSelect {
             color:#800080;
@@ -30,53 +29,125 @@
 </head>
 <body class="bg-dark">
     <br>
-    <div class="container-sm bg-primary rounded text-center">
+    <div class="container-sm bg-primary rounded">
         
         
         <div class="img-fluid">
-            <img src="./title.png" class="rounded" width="130" height="40">
+            <img src="./title.png" class="rounded mt-2 mb-4">
         </div>
-        <br>
-        <br>
         <div class="row">
 
 
-            <div class="col-9">
-                <table class="table table-sm table-dark table-striped table-hover">
-                    <thead class=thead-dark>
-                      <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">First</th>
-                        <th scope="col">Last</th>
-                        <th scope="col">Handle</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                      </tr>
-                    </tbody>
-                  </table>
+            <div class="col-9" id="leftCol">
+                <div class="table-wrapper-scroll-y custom-scrollbar">
+                    <table class="table table-sm table-dark table-striped table-hover" id="processTable" style="font-size: 9px;">
+                        <thead class=thead-dark>
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">PID</th>
+                            <th scope="col">&#37;CPU</th>
+                            <th scope="col">&#37;MEM</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th scope="row">firefox</th>
+                            <td>12673</td>
+                            <td>.20</td>
+                            <td>0.0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">openssh-server</th>
+                            <td>334</td>
+                            <td>0.0</td>
+                            <td>0.0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">syslogd</th>
+                            <td>56564</td>
+                            <td>0.0</td>
+                            <td>0.0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">firefox</th>
+                            <td>12673</td>
+                            <td>.20</td>
+                            <td>0.0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">openssh-server</th>
+                            <td>334</td>
+                            <td>0.0</td>
+                            <td>0.0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">syslogd</th>
+                            <td>56564</td>
+                            <td>0.0</td>
+                            <td>0.0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">firefox</th>
+                            <td>12673</td>
+                            <td>.20</td>
+                            <td>0.0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">openssh-server</th>
+                            <td>334</td>
+                            <td>0.0</td>
+                            <td>0.0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">syslogd</th>
+                            <td>56564</td>
+                            <td>0.0</td>
+                            <td>0.0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">firefox</th>
+                            <td>12673</td>
+                            <td>.20</td>
+                            <td>0.0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">openssh-server</th>
+                            <td>334</td>
+                            <td>0.0</td>
+                            <td>0.0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">syslogd</th>
+                            <td>56564</td>
+                            <td>0.0</td>
+                            <td>0.0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">firefox</th>
+                            <td>12673</td>
+                            <td>.20</td>
+                            <td>0.0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">openssh-server</th>
+                            <td>334</td>
+                            <td>0.0</td>
+                            <td>0.0</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">syslogd</th>
+                            <td>56564</td>
+                            <td>0.0</td>
+                            <td>0.0</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
 
-            <div class="col-3">
-                &emsp;
+            <div class="col-3" id="rightCol">
+                <button type="button" id='killButton' class="btn btn-dark btn-sm text-light btn-outline-danger">&emsp;💀&emsp;</button>
             </div>
 
 

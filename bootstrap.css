@@ -7391,7 +7391,7 @@ textarea.form-control-lg {
 }
 
 .bg-primary {
-  background-color: #0d6efd !important;
+  background-color: #020205 !important;
 }
 
 .bg-secondary {
@@ -10832,4 +10832,14 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+
+.custom-scrollbar {
+  position: relative;
+  height: 200px;
+  overflow: auto;
+}
+
+.table-wrapper-scroll-y {
+  display: block;
 }
