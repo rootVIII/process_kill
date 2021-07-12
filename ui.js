@@ -20,6 +20,8 @@ function onRowDrop(event) {
     let rowData = document.getElementById(dropID);
 
     let entry = `${rowData.childNodes[1].innerHTML}: ${rowData.childNodes[3].innerHTML}`;
-
-    event.target.appendChild(document.createTextNode(entry));
+    let newNode = document.createElement('p');
+    let newTextNode = document.createTextNode(entry);
+    newNode.appendChild(newTextNode);
+    event.target.appendChild(newNode);
 }
