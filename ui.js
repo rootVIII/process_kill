@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 function onRowDragStart(event) {
     /* eslint-enable no-unused-vars */
-    console.log(event.target.id);
+    console.log(`target id: ${event.target.id}`);
     event.dataTransfer.setData('text/plain', event.target.id);
 }
 
@@ -17,5 +17,9 @@ function onRowDrop(event) {
 
     event.preventDefault();
     let dropID = event.dataTransfer.getData('text/plain');
-    event.target.appendChild(document.getElementById(dropID));
+    let rowData = document.getElementById(dropID);
+
+    let entry = `${rowData.childNodes[1].innerHTML}: ${rowData.childNodes[3].innerHTML}`;
+
+    event.target.appendChild(document.createTextNode(entry));
 }

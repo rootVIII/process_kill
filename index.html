@@ -33,8 +33,8 @@
                         </thead>
                         <tbody>
                         <tr id="draggable" draggable="true" ondragstart="onRowDragStart(event)">
-                            <th scope="row">firefox</th>
-                            <td>12673</td>
+                            <th scope="row" id="processName">firefox</th>
+                            <td id="pid">12673</td>
                             <td>.20</td>
                             <td>0.0</td>
                         </tr>
@@ -218,7 +218,7 @@
             </div>
 
             <div class="col-3" id="rightCol">
-                <div class="bg-info border border-dark rounded text-light" id="dropZone" ondragover="onRowDragover(event)" ondrop="onRowDrop(event)">
+                <div class="bg-info border border-dark rounded text-light" id="dropZone" ondragover="onRowDragover(event)" ondrop="onRowDrop(event)" style="font-size: 9px;">
                     <br>
                     <br>
                     <br>
