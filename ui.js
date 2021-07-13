@@ -63,10 +63,14 @@ async function fetchProcesses() {
     return response;
 }
 
-/* eslint-disable no-unused-vars */
-function writeTable() {
-    /* eslint-enable no-unused-vars */
+function callFetch() {
+    return fetchProcesses().then((resp) => resp).catch((err) => ({ ERROR: err.message }));
+}
 
+function writeTable(processResponse) {
+    console.log(processResponse);
+
+    // TODO: write out table with processes from callFetch
 }
 
 document.getElementById('killButton').addEventListener('click', () => {
@@ -77,10 +81,12 @@ document.getElementById('killButton').addEventListener('click', () => {
 
 // TODO: Remove below (for testing only) and template table/load table from server
 document.addEventListener('DOMContentLoaded', () => {
-    this.fetchProcesses().then((resp) => {
-        console.log(resp);
-    }).catch((err) => {
-        console.log('ERROR:');
-        console.log(err.message);
+    callFetch().then((procs) => {
+        if (!('ERROR' in procs)) {
+            writeTable(procs);
+        } else {
+            // TODO: display error message!!!
+            console.log(procs);
+        }
     });
 });
