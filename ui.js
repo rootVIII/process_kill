@@ -42,3 +42,7 @@ function onRowDrop(event) {
         event.target.appendChild(newNode);
     }
 }
+
+document.getElementById('killButton').addEventListener('click', () => {
+    console.log('click');
+});
