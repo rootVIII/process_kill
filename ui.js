@@ -74,3 +74,13 @@ document.getElementById('killButton').addEventListener('click', () => {
     console.log(getSelectedProcesses());
     // TODO: call kill processes
 });
+
+// TODO: Remove below (for testing only) and template table/load table from server
+document.addEventListener('DOMContentLoaded', () => {
+    this.fetchProcesses().then((resp) => {
+        console.log(resp);
+    }).catch((err) => {
+        console.log('ERROR:');
+        console.log(err.message);
+    });
+});

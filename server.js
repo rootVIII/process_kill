@@ -41,7 +41,6 @@ const server = http.createServer((request, response) => {
         let ps = new PSCmd();
         ps.run();
         const processes = ps.getProcessDetails();
-        console.log(processes);
         response.writeHead(200, { 'Content-Type': 'application/json' });
         response.end(processes);
     } else {
