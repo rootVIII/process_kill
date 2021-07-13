@@ -37,7 +37,7 @@ const server = http.createServer((request, response) => {
 
     const contentType = mimeTypes[String(path.extname(filePath)).toLowerCase()] || 'application/octet-stream';
 
-    if (filePath.includes('list-processes')) {
+    if (filePath.includes('processes')) {
         let ps = new PSCmd();
         ps.run();
         const processes = ps.getProcessDetails();
