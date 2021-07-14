@@ -54,10 +54,7 @@ function onRowDrop(event) {
     }
 }
 
-/* eslint-disable no-unused-vars */
 async function fetchProcesses() {
-    /* eslint-enable no-unused-vars */
-
     const resp = await fetch('/processes', { headers: { 'Content-Type': 'application/json' } });
     const response = await resp.json();
     return response;
@@ -68,9 +65,18 @@ function callFetch() {
 }
 
 function writeTable(processResponse) {
-    console.log(processResponse);
+    const tbody = document.getElementById('tableBody');
+    tbody.innerHTML = '';
+    let tableRows = '';
 
-    // TODO: write out table with processes from callFetch
+    Object.entries(processResponse).forEach(([pName, foundPIDs], index) => {
+        foundPIDs.forEach((pid) => {
+            let tr = `<tr id="draggable${index}" draggable="true" ondragstart="onRowDragStart(event)">`;
+            tr += `<th scope="row">${pName}</th><td>${pid[0]}</td><td>${pid[1]}</td><td>${pid[2]}</td></tr>`;
+            tableRows += tr;
+        });
+    });
+    tbody.innerHTML = tableRows;
 }
 
 document.getElementById('killButton').addEventListener('click', () => {
