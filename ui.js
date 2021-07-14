@@ -70,6 +70,9 @@ function writeTable(processResponse) {
     let tableRows = '';
 
     Object.entries(processResponse).forEach(([pName, foundPIDs], index) => {
+        if (pName === 'ps') {
+            return;
+        }
         foundPIDs.forEach((pid) => {
             let tr = `<tr id="draggable${index}" draggable="true" ondragstart="onRowDragStart(event)">`;
             tr += `<th scope="row">${pName}</th><td>${pid[0]}</td><td>${pid[1]}</td><td>${pid[2]}</td></tr>`;
@@ -81,13 +84,14 @@ function writeTable(processResponse) {
 
 function loadTable() {
     callFetch().then((procs) => {
+        console.log('START ANIMATION');
         if (!('ERROR' in procs)) {
-            console.log('writing table');
             writeTable(procs);
         } else {
             // TODO: display error message!!!
             console.log(procs);
         }
+        console.log('STOP ANIMATION');
     });
 }
 
