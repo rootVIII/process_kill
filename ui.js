@@ -43,8 +43,8 @@ function onRowDrop(event) {
     let dropID = event.dataTransfer.getData('text/plain');
     let rowData = document.getElementById(dropID);
 
-    let name = rowData.childNodes[1].innerHTML;
-    let pid = rowData.childNodes[3].innerHTML;
+    let name = rowData.childNodes[0].innerHTML;
+    let pid = rowData.childNodes[1].innerHTML;
 
     if (!(processExists(pid))) {
         let newNode = document.createElement('p');
@@ -85,7 +85,6 @@ document.getElementById('killButton').addEventListener('click', () => {
     // TODO: call kill processes
 });
 
-// TODO: Remove below (for testing only) and template table/load table from server
 document.addEventListener('DOMContentLoaded', () => {
     callFetch().then((procs) => {
         if (!('ERROR' in procs)) {
