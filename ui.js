@@ -79,6 +79,18 @@ function writeTable(processResponse) {
     tbody.innerHTML = tableRows;
 }
 
+function loadTable() {
+    callFetch().then((procs) => {
+        if (!('ERROR' in procs)) {
+            console.log('writing table');
+            writeTable(procs);
+        } else {
+            // TODO: display error message!!!
+            console.log(procs);
+        }
+    });
+}
+
 document.getElementById('killButton').addEventListener('click', () => {
     console.log('click');
     console.log(getSelectedProcesses());
@@ -86,12 +98,9 @@ document.getElementById('killButton').addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    callFetch().then((procs) => {
-        if (!('ERROR' in procs)) {
-            writeTable(procs);
-        } else {
-            // TODO: display error message!!!
-            console.log(procs);
-        }
-    });
+    loadTable();
 });
+
+setInterval(() => {
+    loadTable();
+}, 4000);

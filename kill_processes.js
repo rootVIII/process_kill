@@ -10,8 +10,4 @@ function killProcesses(pids) {
     });
 }
 
-function main() {
-    killProcesses([3733]);
-}
-
-main();
+module.exports = killProcesses;
