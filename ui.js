@@ -3,16 +3,17 @@ class LoadingAnimation {
         this.requestID = null;
         this.clock = 0;
         this.canvas = document.getElementById('psCanvas');
-        this.canvas.width = 20;
+        this.canvas.width = 50;
         this.canvas.height = 10;
         this.ctx = this.canvas.getContext('2d');
     }
 
     showLoading() {
-        if (this.clock % 10 < 1) {
-            this.ctx.fillStyle = '#B40404';
+        const current = this.clock % 60;
+        if (current > 0 && current < 25) {
+            this.ctx.fillStyle = '#00FF00 ';
         } else {
-            this.ctx.fillStyle = '#B40444';
+            this.ctx.fillStyle = '#0B0719';
         }
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
     }
@@ -120,8 +121,10 @@ function loadTable() {
         if (!('ERROR' in procs)) {
             writeTable(procs);
         } else {
-            // TODO: display error message!!!
-            console.log(procs);
+            document.getElementById('errorMessage').innerHTML = procs.ERROR;
+            setTimeout(() => {
+                document.getElementById('errorMessage').innerHTML = '%ensp;';
+            }, 4000);
         }
         console.log('STOP ANIMATION');
     });
