@@ -69,7 +69,6 @@ const indexPage = `
                     <button type="button" id='killButton' class="btn btn-dark btn-sm text-light btn-outline-danger mb-2">Kill Processes 💀</button>
                 </div>
             </div>
-            
         </div>
         <small class="text-light" id="status">&emsp;<small>
         <canvas id="psCanvas"></canvas>
