@@ -1,3 +1,35 @@
+class LoadingAnimation {
+    constructor() {
+        this.requestID = null;
+        this.clock = 0;
+        this.canvas = document.getElementById('psCanvas');
+        this.canvas.width = 20;
+        this.canvas.height = 10;
+        this.ctx = this.canvas.getContext('2d');
+    }
+
+    showLoading() {
+        if (this.clock % 10 < 1) {
+            this.ctx.fillStyle = '#B40404';
+        } else {
+            this.ctx.fillStyle = '#B40444';
+        }
+        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+
+    stop() {
+        window.cancelAnimationFrame(this.requestID);
+    }
+
+    start() {
+        this.requestID = window.requestAnimationFrame(this.start.bind(this));
+        this.showLoading();
+        this.clock++;
+    }
+}
+
+let load = new LoadingAnimation();
+
 function processExists(pid) {
     let dzone = document.getElementById('dropZone');
     let pidExists = false;
@@ -99,9 +131,11 @@ document.getElementById('killButton').addEventListener('click', () => {
     console.log('click');
     console.log(getSelectedProcesses());
     // TODO: call kill processes
+    // TODO: disable button
 });
 
 document.addEventListener('DOMContentLoaded', () => {
+    load.start();
     loadTable();
 });
 
