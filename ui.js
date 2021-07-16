@@ -12,7 +12,6 @@ class LoadingAnimation {
     }
 
     showLoading() {
-        // if (this.clock % 2 < 1) {
         if (this.direction !== 'W' && this.x2 < this.canvas.width) {
             this.x1 += 2;
             this.x2 += 2;
@@ -26,7 +25,6 @@ class LoadingAnimation {
         } else {
             this.direction = 'E';
         }
-        // }
 
         this.ctx.beginPath();
         this.ctx.fillStyle = '#00FF00';
