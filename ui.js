@@ -4,7 +4,7 @@ class LoadingAnimation {
         this.clock = 0;
         this.canvas = document.getElementById('psCanvas');
         this.canvas.width = 100;
-        this.canvas.height = 2;
+        this.canvas.height = 1;
         this.ctx = this.canvas.getContext('2d');
         this.x1 = this.y1 = 0;
         this.x2 = this.y2 = 10;
