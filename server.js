@@ -70,7 +70,7 @@ const indexPage = `
                 </div>
             </div>
         </div>
-        <small class="text-light" id="status">&emsp;<small>
+        <small class="text-muted" id="status">&emsp;<small>
         <canvas id="psCanvas"></canvas>
         <br>
     </div>

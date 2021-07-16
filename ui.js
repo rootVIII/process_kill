@@ -3,7 +3,7 @@ class LoadingAnimation {
         this.requestID = null;
         this.clock = 0;
         this.canvas = document.getElementById('psCanvas');
-        this.canvas.width = 100;
+        this.canvas.width = 60;
         this.canvas.height = 1;
         this.ctx = this.canvas.getContext('2d');
         this.x1 = this.y1 = 0;
@@ -148,7 +148,7 @@ function loadTable() {
 
         setTimeout(() => {
             load.stop();
-        }, 1450);
+        }, 750);
     });
 }
 
