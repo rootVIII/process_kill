@@ -3,26 +3,44 @@ class LoadingAnimation {
         this.requestID = null;
         this.clock = 0;
         this.canvas = document.getElementById('psCanvas');
-        this.canvas.width = 50;
+        this.canvas.width = 100;
         this.canvas.height = 10;
         this.ctx = this.canvas.getContext('2d');
+        this.x1 = this.y1 = 0;
+        this.x2 = this.y2 = 10;
+        this.direction = 'E';
     }
 
     showLoading() {
-        const current = this.clock % 60;
-        if (current > 0 && current < 25) {
-            this.ctx.fillStyle = '#00FF00 ';
-        } else {
-            this.ctx.fillStyle = '#0B0719';
+        if (this.clock % 2 < 1) {
+            if (this.direction !== 'W' && this.x2 < this.canvas.width) {
+                this.x1 += 1;
+                this.x2 += 1;
+            } else {
+                this.direction = 'W';
+            }
+
+            if (this.direction !== 'E' && this.x1 > 0) {
+                this.x1 -= 1;
+                this.x2 -= 1;
+            } else {
+                this.direction = 'E';
+            }
         }
-        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
+
+        this.ctx.beginPath();
+        this.ctx.fillStyle = '#00FF00';
+        this.ctx.fillRect(this.x1, this.y1, this.x2, this.y2);
+        this.ctx.stroke();
     }
 
     stop() {
         window.cancelAnimationFrame(this.requestID);
+        this.clock = 0;
     }
 
     start() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
         this.requestID = window.requestAnimationFrame(this.start.bind(this));
         this.showLoading();
         this.clock++;
