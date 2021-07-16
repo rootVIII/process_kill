@@ -32,20 +32,22 @@ class LoadingAnimation {
         this.ctx.stroke();
     }
 
+    clear() {
+        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+
     stop() {
+        this.clear();
         window.cancelAnimationFrame(this.requestID);
-        this.clock = 0;
     }
 
     start() {
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        this.clear();
         this.requestID = window.requestAnimationFrame(this.start.bind(this));
         this.showLoading();
         this.clock++;
     }
 }
-
-let load = new LoadingAnimation();
 
 function processExists(pid) {
     let dzone = document.getElementById('dropZone');
@@ -132,8 +134,9 @@ function writeTable(processResponse) {
 }
 
 function loadTable() {
+    let load = new LoadingAnimation();
+    load.start();
     callFetch().then((procs) => {
-        console.log('START ANIMATION');
         if (!('ERROR' in procs)) {
             writeTable(procs);
         } else {
@@ -142,7 +145,10 @@ function loadTable() {
                 document.getElementById('errorMessage').innerHTML = '%ensp;';
             }, 4000);
         }
-        console.log('STOP ANIMATION');
+
+        setTimeout(() => {
+            load.stop();
+        }, 1450);
     });
 }
 
@@ -154,10 +160,9 @@ document.getElementById('killButton').addEventListener('click', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    load.start();
     loadTable();
 });
 
 setInterval(() => {
     loadTable();
-}, 4000);
+}, 10000);
