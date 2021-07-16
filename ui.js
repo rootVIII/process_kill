@@ -4,7 +4,7 @@ class LoadingAnimation {
         this.clock = 0;
         this.canvas = document.getElementById('psCanvas');
         this.canvas.width = 100;
-        this.canvas.height = 10;
+        this.canvas.height = 2;
         this.ctx = this.canvas.getContext('2d');
         this.x1 = this.y1 = 0;
         this.x2 = this.y2 = 10;
@@ -12,21 +12,21 @@ class LoadingAnimation {
     }
 
     showLoading() {
-        if (this.clock % 2 < 1) {
-            if (this.direction !== 'W' && this.x2 < this.canvas.width) {
-                this.x1 += 1;
-                this.x2 += 1;
-            } else {
-                this.direction = 'W';
-            }
-
-            if (this.direction !== 'E' && this.x1 > 0) {
-                this.x1 -= 1;
-                this.x2 -= 1;
-            } else {
-                this.direction = 'E';
-            }
+        // if (this.clock % 2 < 1) {
+        if (this.direction !== 'W' && this.x2 < this.canvas.width) {
+            this.x1 += 2;
+            this.x2 += 2;
+        } else {
+            this.direction = 'W';
         }
+
+        if (this.direction !== 'E' && this.x1 > 0) {
+            this.x1 -= 2;
+            this.x2 -= 2;
+        } else {
+            this.direction = 'E';
+        }
+        // }
 
         this.ctx.beginPath();
         this.ctx.fillStyle = '#00FF00';
