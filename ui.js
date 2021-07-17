@@ -6,29 +6,22 @@ class LoadingAnimation {
         this.canvas.width = 60;
         this.canvas.height = 1;
         this.ctx = this.canvas.getContext('2d');
-        this.x1 = this.y1 = 0;
-        this.x2 = this.y2 = 10;
-        this.direction = 'E';
+        this.x1 = 0;
+        this.x2 = 10;
     }
 
     showLoading() {
-        if (this.direction !== 'W' && this.x2 < this.canvas.width) {
+        if (this.x2 < this.canvas.width) {
             this.x1 += 2;
             this.x2 += 2;
         } else {
-            this.direction = 'W';
-        }
-
-        if (this.direction !== 'E' && this.x1 > 0) {
-            this.x1 -= 2;
-            this.x2 -= 2;
-        } else {
-            this.direction = 'E';
+            this.x1 = 0;
+            this.x2 = 10;
         }
 
         this.ctx.beginPath();
         this.ctx.fillStyle = '#00FF00';
-        this.ctx.fillRect(this.x1, this.y1, this.x2, this.y2);
+        this.ctx.fillRect(this.x1, 0, this.x2, 10);
         this.ctx.stroke();
     }
 
@@ -147,8 +140,10 @@ function loadTable() {
         }
 
         setTimeout(() => {
+            let now = new Date();
             load.stop();
-        }, 750);
+            document.getElementById('lastUpdated').innerHTML = now.toTimeString().slice(0, 8);
+        }, 100);
     });
 }
 

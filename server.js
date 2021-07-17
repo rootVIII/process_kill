@@ -41,11 +41,16 @@ const indexPage = `
     <br>
     <div class="container-sm bg-primary rounded">
         <div class="row" style="background-image: linear-gradient(to right, #0d0c0c , #dbd1d0);">
-            <div class="img-fluid">
-                <img src="./title.png" class="rounded mt-2 mb-2">
+            <div class="col-10">
+                <div class="img-fluid">
+                    <img src="./title.png" class="rounded mt-2 mb-2">
+                </div>
+            </div>
+            <div class="col-2">
+                <p class="text-muted" style="font-size: 9px;">&ensp; Updated: <small id="lastUpdated">&emsp;</small></p>
             </div>
         </div>
-        <div class="row mt-3">
+        <div class="row mt-2">
             <div class="col-9" id="leftCol">
                 <div class="table-wrapper-scroll-y custom-scrollbar">
                     <table class="table table-sm table-dark table-striped table-hover" id="processTable">
@@ -70,7 +75,7 @@ const indexPage = `
                 </div>
             </div>
         </div>
-        <small class="text-muted" id="status">&emsp;<small>
+        <small class="text-muted" id="status">&emsp;</small>
         <canvas id="psCanvas"></canvas>
         <br>
     </div>
