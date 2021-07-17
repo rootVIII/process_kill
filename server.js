@@ -47,7 +47,10 @@ const indexPage = `
                 </div>
             </div>
             <div class="col-2">
-                <p class="text-muted" style="font-size: 9px;">&ensp; Updated: <small id="lastUpdated">&emsp;</small></p>
+                <p class="text-muted" style="font-size: 9px;">
+                    &ensp; Updated:
+                    <small id="lastUpdated">&emsp;</small>
+                </p>
             </div>
         </div>
         <div class="row mt-2">
@@ -68,10 +71,15 @@ const indexPage = `
                 </div>
             </div>
             <div class="col-3" id="rightCol">
-                <div class="bg-info border border-dark rounded text-light" id="dropZone" ondragover="onRowDragover(event)" ondrop="onRowDrop(event)" style="height: 400px; font-size: 9px;">
+                <div class="bg-info border border-dark rounded text-light"
+                    id="dropZone" ondragover="onRowDragover(event)"
+                    ondrop="onRowDrop(event)" style="height: 400px; font-size: 9px;">
                 </div>
                 <div class="text-center mt-2">
-                    <button type="button" id='killButton' class="btn btn-dark btn-sm text-light btn-outline-danger mb-2">Kill Processes 💀</button>
+                    <button type="button" id='killButton'
+                        class="btn btn-dark btn-sm text-light btn-outline-danger mb-2">
+                        Kill Processes 💀
+                    </button>
                 </div>
             </div>
         </div>
