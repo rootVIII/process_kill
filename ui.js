@@ -89,7 +89,7 @@ function onRowDrop(event) {
     let name = rowData.childNodes[0].innerHTML;
     let pid = rowData.childNodes[1].innerHTML;
 
-    if (!(processExists(pid))) {
+    if (!(processExists(pid)) && getSelectedProcesses().length < 12) {
         let newNode = document.createElement('p');
         let newTextNode = document.createTextNode(`${name}: ${pid}`);
         newNode.appendChild(newTextNode);
