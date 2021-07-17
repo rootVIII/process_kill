@@ -134,7 +134,7 @@ function loadTable() {
         } else {
             document.getElementById('status').innerHTML = procs.ERROR;
             setTimeout(() => {
-                document.getElementById('status').innerHTML = '%ensp;';
+                document.getElementById('status').innerHTML = '&ensp;';
             }, 4000);
         }
 
