@@ -12,8 +12,8 @@ class LoadingAnimation {
 
     showLoading() {
         if (this.x2 < this.canvas.width) {
-            this.x1 += 2;
-            this.x2 += 2;
+            this.x1 += 1;
+            this.x2 += 1;
         } else {
             this.x1 = 0;
             this.x2 = 10;
@@ -69,7 +69,6 @@ function getSelectedProcesses() {
 /* eslint-disable no-unused-vars */
 function onRowDragStart(event) {
     /* eslint-enable no-unused-vars */
-    console.log(`target id: ${event.target.id}`);
     event.dataTransfer.setData('text/plain', event.target.id);
 }
 
@@ -133,9 +132,9 @@ function loadTable() {
         if (!('ERROR' in procs)) {
             writeTable(procs);
         } else {
-            document.getElementById('errorMessage').innerHTML = procs.ERROR;
+            document.getElementById('status').innerHTML = procs.ERROR;
             setTimeout(() => {
-                document.getElementById('errorMessage').innerHTML = '%ensp;';
+                document.getElementById('status').innerHTML = '%ensp;';
             }, 4000);
         }
 
@@ -160,4 +159,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 setInterval(() => {
     loadTable();
-}, 10000);
+}, 30000);
