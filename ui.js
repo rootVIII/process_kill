@@ -167,8 +167,6 @@ function loadTable() {
     });
 }
 
-// TODO: add clear button, use same function for clearing out dropZone
-
 document.getElementById('killButton').addEventListener('click', () => {
     let killBtn = document.getElementById('killButton');
     killBtn.disabled = true;
@@ -178,6 +176,10 @@ document.getElementById('killButton').addEventListener('click', () => {
         killBtn.disabled = false;
         document.getElementById('dropZone').innerHTML = '';
     });
+});
+
+document.getElementById('clearButton').addEventListener('click', () => {
+    document.getElementById('dropZone').innerHTML = '';
 });
 
 document.addEventListener('DOMContentLoaded', () => {
