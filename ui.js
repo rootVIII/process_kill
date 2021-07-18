@@ -4,7 +4,7 @@ class LoadingAnimation {
         this.clock = 0;
         this.canvas = document.getElementById('psCanvas');
         this.canvas.width = 60;
-        this.canvas.height = 1;
+        this.canvas.height = 8;
         this.ctx = this.canvas.getContext('2d');
         this.x1 = 0;
         this.x2 = 10;
@@ -97,6 +97,27 @@ function onRowDrop(event) {
     }
 }
 
+async function killProcessList(procs) {
+    const resp = await fetch('/kill-process-list', {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(procs),
+    });
+
+    const response = await resp.json();
+    let status = document.getElementById('status');
+
+    if (response.length) {
+        status.innerHTML = `Unable to kill processes: ${procs.join(', ')}`;
+    } else {
+        status.innerHTML = 'Processes killed...';
+    }
+    setTimeout(() => { status.innerHTML = '&thinsp;'; }, 5000);
+}
+
 async function fetchProcesses() {
     const resp = await fetch('/processes', { headers: { 'Content-Type': 'application/json' } });
     const response = await resp.json();
@@ -146,11 +167,17 @@ function loadTable() {
     });
 }
 
+// TODO: add clear button, use same function for clearing out dropZone
+
 document.getElementById('killButton').addEventListener('click', () => {
-    console.log('click');
-    console.log(getSelectedProcesses());
-    // TODO: call kill processes
-    // TODO: disable button
+    let killBtn = document.getElementById('killButton');
+    killBtn.disabled = true;
+
+    killProcessList(getSelectedProcesses()).then(() => {
+        loadTable();
+        killBtn.disabled = false;
+        document.getElementById('dropZone').innerHTML = '';
+    });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -159,4 +186,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 setInterval(() => {
     loadTable();
-}, 30000);
+}, 15000);
