@@ -198,6 +198,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.getElementById('search').addEventListener('keyup', () => {
     console.log(document.getElementById('search').value);
+
+    // Iterate over all table rows and match first found text match, then scrollIntoView
+    let row = document.getElementById('draggable50');
+    row.scrollIntoView();
 });
 
 setInterval(() => {
