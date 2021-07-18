@@ -43,9 +43,8 @@ class LoadingAnimation {
 }
 
 function processExists(pid) {
-    let dzone = document.getElementById('dropZone');
     let pidExists = false;
-    dzone.childNodes.forEach((node) => {
+    document.getElementById('dropZone').childNodes.forEach((node) => {
         if (node.innerHTML && node.innerHTML.includes(': ')) {
             if (node.innerHTML.split(': ')[1].trim() === pid) {
                 pidExists = true;
@@ -56,9 +55,8 @@ function processExists(pid) {
 }
 
 function getSelectedProcesses() {
-    let dzone = document.getElementById('dropZone');
     let pids = [];
-    dzone.childNodes.forEach((node) => {
+    document.getElementById('dropZone').childNodes.forEach((node) => {
         if (node.innerHTML && node.innerHTML.includes(': ')) {
             pids.push(node.innerHTML.split(': ')[1]);
         }
