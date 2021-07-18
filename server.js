@@ -48,7 +48,9 @@ const indexPage = `
                 </div>
             </div>
             <div class="col-2">
-                <p class="text-muted" style="font-size: 9px;">Updated: <small id="lastUpdated">&emsp;</small></p>
+                <p class="text-muted" style="font-size: 9px;">
+                    Updated: <small id="lastUpdated">&emsp;</small>
+                </p>
                 <canvas id="psCanvas"></canvas>
             </div>
         </div>
