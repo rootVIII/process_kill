@@ -196,6 +196,10 @@ document.addEventListener('DOMContentLoaded', () => {
     loadTable();
 });
 
+document.getElementById('search').addEventListener('keyup', () => {
+    console.log(document.getElementById('search').value);
+});
+
 setInterval(() => {
     loadTable();
 }, 15000);
