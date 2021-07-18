@@ -171,11 +171,21 @@ document.getElementById('killButton').addEventListener('click', () => {
     let killBtn = document.getElementById('killButton');
     killBtn.disabled = true;
 
-    killProcessList(getSelectedProcesses()).then(() => {
-        loadTable();
-        killBtn.disabled = false;
-        document.getElementById('dropZone').innerHTML = '';
-    });
+    const processList = getSelectedProcesses();
+    if (processList.length < 1) {
+        const status = document.getElementById('status');
+        status.innerHTML = 'No processes selected to kill';
+        setTimeout(() => {
+            status.innerHTML = '&ensp;';
+            killBtn.disabled = false;
+        }, 4000);
+    } else {
+        killProcessList(processList).then(() => {
+            loadTable();
+            killBtn.disabled = false;
+            document.getElementById('dropZone').innerHTML = '';
+        });
+    }
 });
 
 document.getElementById('clearButton').addEventListener('click', () => {
