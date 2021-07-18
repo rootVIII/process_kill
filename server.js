@@ -42,10 +42,14 @@ const indexPage = `
     <br>
     <div class="container-sm bg-primary rounded">
         <div class="row" style="background-image: linear-gradient(to right, #0d0c0c , #dbd1d0);">
-            <div class="col-10">
+            <div class="col-3">
                 <div class="img-fluid">
                     <img src="./title.png" class="rounded mt-2 mb-2">
                 </div>
+            </div>
+            <div class="col-7">
+                <input type="text" class="form-control form-control-sm mt-2" style="width: 150px"
+                    id="search" aria-describedby="search" placeholder="Search">
             </div>
             <div class="col-2">
                 <p class="text-muted" style="font-size: 9px;">
