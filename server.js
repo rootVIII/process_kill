@@ -74,6 +74,7 @@ const indexPage = `
                         </tbody>
                     </table>
                 </div>
+                <small class="text-muted" id="status">&emsp;</small>
             </div>
             <div class="col-3" id="rightCol">
                 <div class="bg-info border border-dark rounded text-light"
@@ -92,8 +93,6 @@ const indexPage = `
                 </div>
             </div>
         </div>
-        <small class="text-muted" id="status">&emsp;</small>
-        <br>
     </div>
 </body>`;
 
