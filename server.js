@@ -48,10 +48,8 @@ const indexPage = `
                 </div>
             </div>
             <div class="col-2">
-                <p class="text-muted" style="font-size: 9px;">
-                    &ensp; Updated:
-                    <small id="lastUpdated">&emsp;</small>
-                </p>
+                <p class="text-muted" style="font-size: 9px;">Updated: <small id="lastUpdated">&emsp;</small></p>
+                <canvas id="psCanvas"></canvas>
             </div>
         </div>
         <div class="row mt-2">
@@ -89,7 +87,6 @@ const indexPage = `
             </div>
         </div>
         <small class="text-muted" id="status">&emsp;</small>
-        <canvas id="psCanvas"></canvas>
         <br>
     </div>
 </body>`;
