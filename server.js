@@ -77,7 +77,11 @@ const indexPage = `
                     ondrop="onRowDrop(event)" style="height: 400px; font-size: 9px;">
                 </div>
                 <div class="text-center mt-2">
-                    <button type="button" id='killButton'
+                    <button type="button" id="clearButton" style="font-size: 10px;"
+                        class="btn btn-dark btn-sm text-light btn-outline-primary mb-2">
+                        Clear
+                    </button>
+                    <button type="button" id="killButton" style="font-size: 10px;"
                         class="btn btn-dark btn-sm text-light btn-outline-danger mb-2">
                         Kill Processes 💀
                     </button>
@@ -88,8 +92,7 @@ const indexPage = `
         <canvas id="psCanvas"></canvas>
         <br>
     </div>
-</body>
-`;
+</body>`;
 
 const server = http.createServer((request, response) => {
     let filePath;
