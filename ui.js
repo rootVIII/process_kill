@@ -66,17 +66,13 @@ function getSelectedProcesses() {
 
 /* eslint-disable no-unused-vars */
 function onRowDragStart(event) {
-    /* eslint-enable no-unused-vars */
     event.dataTransfer.setData('text/plain', event.target.id);
 }
 
-/* eslint-disable no-unused-vars */
 function onRowDragover(event) {
-    /* eslint-enable no-unused-vars */
     event.preventDefault();
 }
 
-/* eslint-disable no-unused-vars */
 function onRowDrop(event) {
     /* eslint-enable no-unused-vars */
 
@@ -186,6 +182,7 @@ document.getElementById('killButton').addEventListener('click', () => {
     }
 });
 
+// E V E N T   L I S T E N E R S
 document.getElementById('clearButton').addEventListener('click', () => {
     document.getElementById('dropZone').innerHTML = '';
 });
