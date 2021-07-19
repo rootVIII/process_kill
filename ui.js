@@ -206,10 +206,11 @@ document.getElementById('search').addEventListener('keyup', () => {
         }
         if (rowText.includes(document.getElementById('search').value)) {
             rowID = rows[index].id;
-            console.log(rowID);
             break;
         }
     }
+
+    console.log(rowID);
 
     // Iterate over all table rows and match first found text match, then scrollIntoView
     // let row = document.getElementById('draggable50');
