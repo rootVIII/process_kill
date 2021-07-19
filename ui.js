@@ -194,7 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 document.getElementById('search').addEventListener('keyup', () => {
     const rows = document.getElementById('tableBody').childNodes;
-    let rowID;
+    let rowID = 'draggable0';
 
     for (let index = 0; index < rows.length; index++) {
         let rowTags = rows[index].childNodes;
