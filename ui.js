@@ -183,6 +183,7 @@ document.getElementById('killButton').addEventListener('click', () => {
 });
 
 // E V E N T   L I S T E N E R S
+
 document.getElementById('clearButton').addEventListener('click', () => {
     document.getElementById('dropZone').innerHTML = '';
 });
