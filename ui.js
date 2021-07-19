@@ -195,11 +195,25 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.getElementById('search').addEventListener('keyup', () => {
-    console.log(document.getElementById('search').value);
+    const rows = document.getElementById('tableBody').childNodes;
+    let rowID;
+
+    for (let index = 0; index < rows.length; index++) {
+        let rowTags = rows[index].childNodes;
+        let rowText = '';
+        for (let tag = 0; tag < 4; tag++) {
+            rowText += `${rowTags[tag].innerHTML} `;
+        }
+        if (rowText.includes(document.getElementById('search').value)) {
+            rowID = rows[index].id;
+            console.log(rowID);
+            break;
+        }
+    }
 
     // Iterate over all table rows and match first found text match, then scrollIntoView
-    let row = document.getElementById('draggable50');
-    row.scrollIntoView();
+    // let row = document.getElementById('draggable50');
+    // row.scrollIntoView();
 });
 
 setInterval(() => {
