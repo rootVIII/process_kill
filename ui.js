@@ -128,9 +128,10 @@ function writeTable(processResponse) {
     let tableRows = '';
 
     Object.entries(processResponse).forEach(([pName, foundPIDs], index) => {
-        if (pName === 'ps') {
+        if (['ps', 'COMMAND'].includes(pName)) {
             return;
         }
+
         foundPIDs.forEach((pid) => {
             let tr = `<tr id="draggable${index}" draggable="true" ondragstart="onRowDragStart(event)">`;
             tr += `<th scope="row">${pName}</th><td>${pid[0]}</td><td>${pid[1]}</td><td>${pid[2]}</td></tr>`;
