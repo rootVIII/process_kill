@@ -38,7 +38,7 @@ const indexPage = `
     <link rel=stylesheet type=text/css href="./bootstrap.css">
     <script src="./ui.js" type="text/javascript" defer> </script>
 </head>
-<body class="bg-light">
+<body class="bg-primary">
     <br>
     <div class="container-sm bg-primary rounded">
         <div class="row" style="background-image: linear-gradient(to right, #0d0c0c , #dbd1d0);">
