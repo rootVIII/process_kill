@@ -18,15 +18,8 @@ const mimeTypes = {
 };
 
 const page404 = `
-<!DOCTYPE html><html lang="en" dir="ltr">
-    <head>
-        <title>Not Found</title>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        Not Found
-    </body>
-</html>`;
+<!DOCTYPE html><html lang="en" dir="ltr"><title>Not Found</title>
+<meta charset="UTF-8"></head><body>Not Found</body></html>`;
 
 const server = http.createServer((request, response) => {
     let filePath;
