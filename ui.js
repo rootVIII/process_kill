@@ -179,6 +179,8 @@ document.getElementById('killButton').addEventListener('click', () => {
             loadTable();
             killBtn.disabled = false;
             document.getElementById('dropZone').innerHTML = '';
+
+            
         });
     }
 });
