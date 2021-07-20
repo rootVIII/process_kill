@@ -40,7 +40,7 @@ const indexPage = `
 </head>
 <body class="bg-primary">
     <br>
-    <div class="container-sm bg-primary rounded">
+    <div class="container-sm bg-secondary rounded">
         <div class="row" style="background-image: linear-gradient(to right, #0d0c0c , #dbd1d0);">
             <div class="col-3">
                 <div class="img-fluid">
