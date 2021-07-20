@@ -186,7 +186,7 @@ document.getElementById('killButton').addEventListener('click', () => {
 // E V E N T   L I S T E N E R S:
 
 document.getElementById('clearButton').addEventListener('click', () => {
-    let clrBtn = document.getElementById('clearButton')
+    let clrBtn = document.getElementById('clearButton');
     clrBtn.disabled = true;
     document.getElementById('dropZone').innerHTML = '';
     clrBtn.disabled = false;
