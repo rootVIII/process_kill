@@ -17,10 +17,6 @@ const mimeTypes = {
     '.eot': 'application/vnd.ms-fontobject',
 };
 
-const page404 = `
-<!DOCTYPE html><html lang="en" dir="ltr"><title>Not Found</title>
-<meta charset="UTF-8"></head><body>Not Found</body></html>`;
-
 const server = http.createServer((request, response) => {
     let filePath;
     if (request.url === '/') {
@@ -62,13 +58,13 @@ const server = http.createServer((request, response) => {
         });
     } else if (filePath.includes('index.html')) {
         response.writeHead(200, { 'Content-Type': contentType });
-        response.end(utils.getIndexPage(), 'utf-8');
+        response.end(utils.getIndex(), 'utf-8');
     } else {
         fs.readFile(filePath, (error, content) => {
             if (error) {
                 if (error.code === 'ENOENT') {
                     response.setHeader('Content-Type', 'text/html');
-                    response.end(page404);
+                    response.end(utils.get404());
                 } else {
                     response.writeHead(500);
                     response.end(`ERROR: ${error}`);

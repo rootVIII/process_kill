@@ -12,7 +12,12 @@ function killProcesses(pids) {
     return errors;
 }
 
-function getIndexPage() {
+function get404() {
+    return `<!DOCTYPE html><html lang="en" dir="ltr"><title>Not Found</title>
+    <meta charset="UTF-8"></head><body>Not Found</body></html>`;
+}
+
+function getIndex() {
     return `
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -83,5 +88,6 @@ function getIndexPage() {
 
 module.exports = {
     killProcesses,
-    getIndexPage,
+    get404,
+    getIndex,
 };
