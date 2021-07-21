@@ -6,7 +6,6 @@ function killProcesses(pids) {
         try {
             process.kill(pid);
         } catch (err) {
-            console.error(err.message);
             errors.push(pid);
         }
     });
