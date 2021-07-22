@@ -5,7 +5,7 @@
 <br>
 <br>
 Usage: scroll or use the search feature to find processes. Drag up to 12 processes into the kill area and
-press the Kill Processes button to send kill signal.
+press the <b>Kill Processes</b> button to send kill signal.
 <br>
 <br>
 Note that processes running as root may only be killed by running the application as root via terminal:
