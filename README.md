@@ -4,6 +4,10 @@
 <img src="https://github.com/rootVIII/process_kill/blob/master/process_kill.gif" alt="gif">
 <br>
 <br>
+Usage: scroll or use the search feature to find processes. Drag up to 12 processes into the kill area and
+press the Kill Processes button to send kill signal.
+<br>
+<br>
 Note that processes running as root may only be killed by running the application as root via terminal:
 <pre>
   <code>
