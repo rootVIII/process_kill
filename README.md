@@ -1,9 +1,8 @@
-###### Process Kill for MacOS
+###### Process Kill for MacOS: View, search, and kill long-running processes
 <img src="https://user-images.githubusercontent.com/30498791/126584573-76637f2f-d7ca-48d5-ae95-ec9cca399b0a.png" alt="png">
 <br>
 <img src="https://github.com/rootVIII/process_kill/blob/master/process_kill.gif" alt="gif">
 <br>
-View, search, and kill long-running processes
 <br>
 Note that processes running as root may only be killed by running the application as root via terminal:
 <pre>
