@@ -1,18 +1,11 @@
 ###### Process Kill for MacOS
-<img src="" alt="mp4">
+<img src="https://user-images.githubusercontent.com/30498791/126584573-76637f2f-d7ca-48d5-ae95-ec9cca399b0a.png" alt="png">
+<br>
+<img src="https://user-images.githubusercontent.com/30498791/126584464-3c705675-200c-4806-af39-f10241f324bd.gif" alt="mp4">
 <br>
 View, search, and kill long-running processes
 <br>
-
-<br>
-<br>
-
-<br>
-<br>
-
-
-Note that processes running as root may only be killed by running the application as root.
-Via terminal:
+Note that processes running as root may only be killed by running the application as root via terminal:
 <pre>
   <code>
 sudo su root
@@ -20,7 +13,6 @@ sudo su root
 ./Applications/Process\ Kill.app/Contents/MacOS/Process\ Kill  
   </code>
 </pre>
-<br>
 <br>
 <br>
 There is a signed/Apple-notarized macOS installer found in
@@ -36,6 +28,5 @@ npm start .
 npm run pack
   </code>
 </pre>
-<br>
 <hr>
 <b>Author: rootVIII 2020</b><br>
