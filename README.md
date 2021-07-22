@@ -1,7 +1,7 @@
 ###### Process Kill for MacOS
 <img src="https://user-images.githubusercontent.com/30498791/126584573-76637f2f-d7ca-48d5-ae95-ec9cca399b0a.png" alt="png">
 <br>
-<img src="https://user-images.githubusercontent.com/30498791/126584464-3c705675-200c-4806-af39-f10241f324bd.gif" alt="mp4">
+<img src="https://github.com/rootVIII/process_kill/blob/master/process_kill.gif" alt="gif">
 <br>
 View, search, and kill long-running processes
 <br>
