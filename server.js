@@ -31,8 +31,6 @@ const mimeTypes = {
     '.css': 'text/css',
     '.json': 'application/json',
     '.png': 'image/png',
-    '.jpg': 'image/jpg',
-    '.eot': 'application/vnd.ms-fontobject',
 };
 
 const server = http.createServer((request, response) => {
@@ -80,13 +78,8 @@ const server = http.createServer((request, response) => {
     } else {
         fs.readFile(filePath, (error, content) => {
             if (error) {
-                if (error.code === 'ENOENT') {
-                    response.setHeader('Content-Type', 'text/html');
-                    response.end(utils.get404());
-                } else {
-                    response.writeHead(500);
-                    response.end(`ERROR: ${error}`);
-                }
+                response.setHeader('Content-Type', 'text/html');
+                response.end(utils.get404());
             } else {
                 response.writeHead(200, { 'Content-Type': contentType });
                 response.end(content, 'utf-8');
