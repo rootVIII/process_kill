@@ -4,14 +4,14 @@
   "description": "Display, search, and/or kill running processes",
   "main": "app.js",
   "devDependencies": {
-    "electron": "^13.1.7",
+    "electron": "^13.3.0",
     "electron-builder": "^22.11.7",
     "eslint": "^7.31.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.23.4"
   },
   "dependencies": {
-    "electron": "^13.1.7"
+    "electron": "^13.3.0"
   },
   "scripts": {
     "start": "electron .",
